@@ -1,0 +1,17 @@
+name: Test and Build
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test_and_build: # Nombre del trabajo
+    runs-on: ubuntu-latest # El trabajo se ejecutará en un entorno de Ubuntu
+
+    steps: # Pasos a seguir para ejecutar el trabajo
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11 # Configura el entorno de Python 3.11
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.11"
